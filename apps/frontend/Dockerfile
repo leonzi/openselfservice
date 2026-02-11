@@ -40,7 +40,7 @@ ENV NODE_ENV production
 # https://nextjs.org/docs/app/guides/environment-variables#bundling-environment-variables-for-the-browser
 ENV NEXT_PUBLIC_API_URL http://localhost:3001/api
 
-RUN npx turbo build --filter=@o2s/frontend...
+RUN npm --workspace=@o2s/frontend run build
 
 FROM base AS runner
 WORKDIR /app
