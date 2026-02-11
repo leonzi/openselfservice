@@ -22,7 +22,10 @@ WORKDIR /app
 # Build the project and its dependencies
 COPY --from=builder /app/out/full/ .
 
-RUN npm i
+ENV PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD=1
+ENV PLAYWRIGHT_BROWSERS_PATH=0
+
+RUN npm i --ignore-scripts
 
 # Uncomment and use build args to enable remote caching
 # ARG TURBO_TEAM
