@@ -25,7 +25,8 @@ COPY --from=builder /app/out/full/ .
 ENV PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD=1
 ENV PLAYWRIGHT_BROWSERS_PATH=0
 
-RUN npm i --ignore-scripts
+ENV HUSKY=0
+RUN npm i
 
 # Uncomment and use build args to enable remote caching
 # ARG TURBO_TEAM
