@@ -27,6 +27,7 @@ ENV PLAYWRIGHT_BROWSERS_PATH=0
 
 ENV HUSKY=0
 RUN npm i
+RUN npx turbo build --filter=@o2s/frontend...
 
 # Uncomment and use build args to enable remote caching
 # ARG TURBO_TEAM
